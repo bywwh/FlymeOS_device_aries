@@ -1,0 +1,3 @@
+post-build=Xiaomi/cm_aries/aries:5.1.1/LMY47V/e20bc1f34b:userdebug/test-keys
+post-timestamp=1432096387
+pre-device=aries
