@@ -31,11 +31,11 @@ mv system/app system/priv-app data/system_app
 mkdir -p flyme_merge_partition
 cp -rf boot.img system/framework/framework-res.apk ./flyme_merge_partition
 cd flyme_merge_partition
-../../../../../tools/apktool if framework-res.apk
-../../../../../tools/apktool d framework-res.apk
+apktool if framework-res.apk
+apktool d framework-res.apk
 unpack_bootimg boot.img boot.img.out
 patch -p1 < ../../../other/Merge_partition.patch
-../../../../../tools/apktool b framework-res
+apktool b framework-res
 pack_bootimg boot.img.out boot.img
 mv framework-res.apk framework-res.zip
 mv framework-res/build/apk/res ./
@@ -52,7 +52,7 @@ rm -rf flyme_merge_partition
 # end
 
 zip -r flyme.zip *
-java -jar ../../../../build/tools/signapk.jar ../../../../build/security/platform.x509.pem ../../../../build/security/platform.pk8 flyme.zip flyme_aries_bywwh_$(date +%Y%m%d).zip
+java -jar ../../../../build/tools/signapk.jar ../../../../build/security/platform.x509.pem ../../../../build/security/platform.pk8 flyme.zip FlymeOS_aries-$USER-$(date +%Y%m%d)-5.1.1.zip
 mv flyme*.zip ../
 rm -rf ../flyme
 rm -rf ../flyme.zip
