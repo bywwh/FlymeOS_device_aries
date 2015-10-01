@@ -6,6 +6,7 @@
 ===
 1.下载代码
 ===
+
     $ mkdir FlymeOS
     $ cd FlymeOS
     $ repo init -u https://github.com/FlymeOS/manifest.git -b lollipop-5.0
