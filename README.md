@@ -4,20 +4,11 @@
 
 1.下载代码
 ===
-使用下面的命令下载Flyme代码：   
-
-    $ mkdir FlymeOS                     
-    $ cd FlymeOS                        
-    $ repo init -u https://github.com/FlymeOS/manifest.git -b lollipop-5.0              
-    $ repo sync -c -j4                  
-
-1.下载代码
-===
 使用下面的命令下载Flyme代码：    
 
-    $ mkdir FlymeOS                        
-    $ cd FlymeOS                  
-    $ repo init -u https://github.com/FlymeOS/manifest.git -b lollipop-5.0 
+    $ mkdir FlymeOS
+    $ cd FlymeOS
+    $ repo init -u https://github.com/FlymeOS/manifest.git -b lollipop-5.0                  
     $ repo sync -c -j4
 
 2.下载base_cm
