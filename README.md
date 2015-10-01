@@ -11,13 +11,14 @@
     $ repo init -u https://github.com/FlymeOS/manifest.git -b lollipop-5.0              
     $ repo sync -c -j4                  
 
-2.下载base_cm
+1.下载代码
 ===
-下载完Flyme代码后，还要下载base_cm的lollipop-5.1分支的代码：    
+使用下面的命令下载Flyme代码：    
 
-    $ cd devices                        
-    $ git clone https://github.com/FlymeOS/devices-base_cm.git --single-branch -b lollipop-5.1                  
-    $ mv ./devices-base_cm ./base_cm 
+    $ mkdir FlymeOS                        
+    $ cd FlymeOS                  
+    $ repo init -u https://github.com/FlymeOS/manifest.git -b lollipop-5.0 
+    $ repo sync -c -j4
 
 2.下载base_cm
 ===
