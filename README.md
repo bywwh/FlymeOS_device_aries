@@ -6,6 +6,7 @@
 ===
 1.下载代码
 ===
+使用下面的命令下载Flyme代码：
 
     $ mkdir FlymeOS
     $ cd FlymeOS
