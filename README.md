@@ -15,6 +15,7 @@
 2.下载base_cm
 ===
 下载完Flyme代码后，还要下载base_cm的lollipop-5.1分支的代码：
+    $ mkdir FlymeOS
     $ cd devices
     $ git clone https://github.com/FlymeOS/devices-base_cm.git --single-branch -b lollipop-5.1
     $ mv ./devices-base_cm ./base_cm
