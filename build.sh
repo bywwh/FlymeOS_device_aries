@@ -45,17 +45,16 @@ cp -rf ../../../other/META-INF ./
 mkdir -p system/framework
 mv framework-res.apk system/framework
 zip -r merge_partition.zip META-INF system boot.img
-java -jar ../../../../../build/tools/signapk.jar ../../../../../build/security/platform.x509.pem ../../../../../build/security/platform.pk8 merge_partition.zip flyme_merge_partition_$(date +%Y%m%d).zip
-mv flyme*.zip ../../
+java -jar ../../../../../build/tools/signapk.jar ../../../../../build/security/platform.x509.pem ../../../../../build/security/platform.pk8 merge_partition.zip FlymeOS_aries_merge_partition_$(date +%Y%m%d).zip
+mv FlymeOS*.zip ../../
 cd ..
 rm -rf flyme_merge_partition
 # end
 
 zip -r flyme.zip *
 java -jar ../../../../build/tools/signapk.jar ../../../../build/security/platform.x509.pem ../../../../build/security/platform.pk8 flyme.zip FlymeOS_aries-$USER-$(date +%Y%m%d)-5.1.1.zip
-mv flyme*.zip ../
+mv FlymeOS*.zip ../
 rm -rf ../flyme
-rm -rf ../flyme.zip
 echo
 echo "刷机包编译完成！刷机包在out目录中"
 cd ..
