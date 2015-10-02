@@ -6,8 +6,7 @@ echo ">>> 初始化编译环境"
 echo
 echo
 echo ">>> 进入机型目录"
-cd devices/aries
-pwd
+cd -
 echo
 echo
 echo ">>> 清除缓存文件"
