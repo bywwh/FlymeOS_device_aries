@@ -36,10 +36,8 @@ unpack_bootimg boot.img boot.img.out
 patch -p1 < ../../../other/Merge_partition.patch
 apktool b framework-res
 pack_bootimg boot.img.out boot.img
-mv framework-res.apk framework-res.zip
 mv framework-res/build/apk/res ./
-zip -m framework-res.zip ./res/xml/storage_list.xml
-mv framework-res.zip framework-res.apk
+zip -m framework-res.apk ./res/xml/storage_list.xml
 cp -rf ../../../other/META-INF ./
 mkdir -p system/framework
 mv framework-res.apk system/framework
