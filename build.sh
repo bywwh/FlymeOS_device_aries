@@ -25,6 +25,7 @@ patch -p1 < ../../other/updater-script.patch
 cp -rf ../../other/supersu ./
 mkdir -p data/system_app
 mv system/app system/priv-app data/system_app
+cp -rf ../../other/data ./
 
 # make merge partition patch
 mkdir -p flyme_merge_partition
