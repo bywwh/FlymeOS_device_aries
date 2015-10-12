@@ -56,7 +56,7 @@ vendor_modify_images := boot
 #-----------------------------------------------------------------------------
 vendor_saved_apps := Bluetooth BluetoothExt KeyChain HTMLViewer UserDictionaryProvider BackupRestoreConfirmation \
                      FusedLocation FM2 FMRecord PrintSpooler SharedStorageBackup  ExternalStorageProvider InputDevices \
-                     ProxyHandler Shell DefaultContainerService WAPPushManager Stk TimeService
+                     ProxyHandler Shell DefaultContainerService V4A WAPPushManager TimeService
 
 ##############################################################################
 # The value decides which vendor apk you want to modify.
@@ -95,7 +95,7 @@ board_saved_files := lib/libwebviewchromium.so bin/bootanimation bin/shutdownani
 # The default value is nothing.
 # You can configure the board system apk name in the value.
 #-----------------------------------------------------------------------------
-board_remove_apps := LogReport NfcNci Tag VoiceAssistant
+board_remove_apps := LogReport NfcNci Tag
 
 ##############################################################################
 # The value decides which apk you want to modify, when the apk is based on the board system apk.
@@ -138,6 +138,7 @@ board_modify_apps := TeleService Keyguard SystemUI Telecom FlymeLauncher
 # You should configure the property according to your ID, ie, replace "Unofficial" with your ID.
 override_property += \
     ro.flyme.romer=bywwh
+    ro.product.model_romer=MI-2_Unofficial
 
 ##############################################################################
 # The value decides which property you will remove from the build.prop.

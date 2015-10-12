@@ -1,3 +1,0 @@
-<permissions> 
-    <library name="android.dolby" file="/system/framework/dolby_ds.jar"/> 
-</permissions> 

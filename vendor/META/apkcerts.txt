@@ -5,6 +5,7 @@ name="BluetoothExt.apk" certificate="build/security/platform.x509.pem" private_k
 name="Browser.apk" certificate="PRESIGNED" private_key=""
 name="Calculator.apk" certificate="PRESIGNED" private_key=""
 name="Calendar.apk" certificate="PRESIGNED" private_key=""
+name="V4A.apk" certificate="PRESIGNED" private_key=""
 name="CalendarProvider.apk" certificate="PRESIGNED" private_key=""
 name="Camera2.apk" certificate="build/security/platform.x509.pem" private_key="build/security/platform.pk8"
 name="CaptivePortalLogin.apk" certificate="build/security/platform.x509.pem" private_key="build/security/platform.pk8"

@@ -37,9 +37,12 @@ on init
     mkdir /mnt/media_rw/usbdisk 0700 media_rw media_rw
     mkdir /storage/sdcard0 0775 system system
     mkdir /storage/usbdisk 0775 system system
+    mkdir /storage_int 0775 media_rw media_rw
+    chown media_rw media_rw /storage_int
     export EXTERNAL_STORAGE /storage/sdcard0
 
     symlink /storage/sdcard0 /sdcard
+    symlink /storage/sdcard0 /storage_int
     symlink /storage/sdcard0 /mnt/sdcard
     symlink /storage/usbdisk /usbdisk
     symlink /storage/usbdisk /mnt/usbdisk
@@ -50,6 +53,13 @@ on fs
     restorecon_recursive /persist
     mkdir /persist/property
     chmod 0775 /persist/property
+
+    chmod 0775 /storage_int
+    chown media_rw media_rw /storage_int
+    mkdir /storage_int/ramdump 0775
+    chown media_rw media_rw /storage_int/ramdump
+    mkdir /storage_int/ramdump/mdm 0775
+    chown media_rw media_rw /storage_int/ramdump/mdm
 
     chown system system /dev/ramdump_dsps
     chown system system /dev/ramdump_lpass

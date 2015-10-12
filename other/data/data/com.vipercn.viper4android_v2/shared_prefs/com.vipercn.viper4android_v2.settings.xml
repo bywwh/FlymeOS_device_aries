@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<map>
+    <int name="viper4android.settings.uiprefer" value="2" />
+    <boolean name="viper4android.settings.driverconfigured" value="true" />
+    <string name="viper4android.settings.ddc_db_compatible">2.3.4.0</string>
+    <string name="viper4android.settings.lastversion">2.3.4.0</string>
+    <boolean name="viper4android.settings.onlineactive" value="true" />
+</map>
