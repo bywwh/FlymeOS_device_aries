@@ -10,9 +10,9 @@ cd -
 echo
 echo
 echo ">>> 清除缓存文件"
-make clean
+flyme clean
 echo ">>> 编译刷机包"
-make fullota
+flyme fullota
 
 if [ -e ./out/flyme*.zip ]
    then
