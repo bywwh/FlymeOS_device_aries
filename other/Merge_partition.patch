@@ -1,5 +1,5 @@
 diff --git a/boot.img.out/RAMDISK/fstab.qcom b/boot.img.out/RAMDISK/fstab.qcom
-index a86b9df..6832476 100644
+index 86dba05..6832476 100644
 --- a/boot.img.out/RAMDISK/fstab.qcom
 +++ b/boot.img.out/RAMDISK/fstab.qcom
 @@ -2,19 +2,10 @@
@@ -22,14 +22,14 @@ index a86b9df..6832476 100644
 -/dev/block/platform/msm_sdcc.1/by-name/tz           /tz             emmc    defaults                                                        defaults
 -/dev/block/platform/msm_sdcc.1/by-name/rpm          /rpm            emmc    defaults                                                        defaults
 -/dev/block/platform/msm_sdcc.1/by-name/aboot        /aboot          emmc    defaults                                                        defaults
--/devices/platform/msm_sdcc.1/mmc_host/mmc0          auto            auto    defaults                                                        voldmanaged=sdcard0:27,nonremovable,noemulatedsd
--/devices/platform/msm_hsusb_host/usb2               auto            auto    defaults                                                        voldmanaged=usbdisk:auto
+-/devices/platform/msm_sdcc.1/mmc_host/mmc0*          auto            auto    defaults                                                        voldmanaged=sdcard0:27,nonremovable,noemulatedsd
+-/devices/platform/msm_hsusb_host*               auto            auto    defaults                                                        voldmanaged=usbdisk:auto
 +/devices/platform/msm_hsusb_host*                    auto            auto    defaults                                                        voldmanaged=usbotg:auto
 diff --git a/boot.img.out/RAMDISK/init.qcom.rc b/boot.img.out/RAMDISK/init.qcom.rc
-index b73f2b6..20a2ab3 100755
+index 0954421..20a2ab3 100755
 --- a/boot.img.out/RAMDISK/init.qcom.rc
 +++ b/boot.img.out/RAMDISK/init.qcom.rc
-@@ -32,17 +32,20 @@ on init
+@@ -32,20 +32,20 @@ on init
      # Set permissions for persist partition
      mkdir /persist 0771 system system
      # See storage config details at http://source.android.com/tech/storage/
@@ -38,9 +38,12 @@ index b73f2b6..20a2ab3 100755
 -    mkdir /mnt/media_rw/usbdisk 0700 media_rw media_rw
 -    mkdir /storage/sdcard0 0775 system system
 -    mkdir /storage/usbdisk 0775 system system
+-    mkdir /storage_int 0775 media_rw media_rw
+-    chown media_rw media_rw /storage_int
 -    export EXTERNAL_STORAGE /storage/sdcard0
 -
 -    symlink /storage/sdcard0 /sdcard
+-    symlink /storage/sdcard0 /storage_int
 -    symlink /storage/sdcard0 /mnt/sdcard
 -    symlink /storage/usbdisk /usbdisk
 -    symlink /storage/usbdisk /mnt/usbdisk
@@ -61,7 +64,21 @@ index b73f2b6..20a2ab3 100755
  
  on fs
      mount_all ./fstab.qcom
-@@ -265,6 +268,7 @@ on post-fs-data
+@@ -54,13 +54,6 @@ on fs
+     mkdir /persist/property
+     chmod 0775 /persist/property
+ 
+-    chmod 0775 /storage_int
+-    chown media_rw media_rw /storage_int
+-    mkdir /storage_int/ramdump 0775
+-    chown media_rw media_rw /storage_int/ramdump
+-    mkdir /storage_int/ramdump/mdm 0775
+-    chown media_rw media_rw /storage_int/ramdump/mdm
+-
+     chown system system /dev/ramdump_dsps
+     chown system system /dev/ramdump_lpass
+     chown system system /dev/ramdump_riva
+@@ -275,6 +268,7 @@ on post-fs-data
      mkdir /data/misc/camera 0770 camera camera
  
      mkdir /data/media 0770 media_rw media_rw
@@ -69,7 +86,7 @@ index b73f2b6..20a2ab3 100755
  
      # Create the directories used by the Wireless subsystem
      mkdir /data/misc/wifi 0770 wifi wifi
-@@ -582,16 +586,20 @@ service sensors /system/bin/sensors.qcom
+@@ -592,16 +586,20 @@ service sensors /system/bin/sensors.qcom
      class late_start
      user root
      group root
