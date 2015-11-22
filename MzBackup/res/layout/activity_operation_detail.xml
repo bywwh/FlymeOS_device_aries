@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/top_panel" android:background="@drawable/main_backup_background" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:orientation="vertical" android:paddingTop="36.0dip" android:paddingBottom="14.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true" android:layout_centerVertical="true">
+            <TextView android:textSize="22.0sp" android:textColor="#ffffffff" android:gravity="center" android:id="@id/system_setting_title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/operation_detail" />
+        </LinearLayout>
+    </RelativeLayout>
+    <ScrollView android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/top_panel">
+        <RelativeLayout android:paddingLeft="15.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:textStyle="bold" android:id="@id/replace_by_sd_head" android:paddingTop="15.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/replace_by_sd_head" />
+            <TextView android:id="@id/replace_by_sd" android:paddingTop="8.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/replace_by_sd" android:layout_below="@id/replace_by_sd_head" />
+            <TextView android:textStyle="bold" android:id="@id/replace_by_computer_head" android:paddingTop="15.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/replace_by_computer_head" android:layout_below="@id/replace_by_sd" />
+            <TextView android:paddingTop="8.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/replace_by_computer" android:layout_below="@id/replace_by_computer_head" />
+        </RelativeLayout>
+    </ScrollView>
+    <LinearLayout android:gravity="center" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="25.0dip" android:layout_alignParentBottom="true">
+        <Button android:layout_gravity="bottom|center" android:id="@id/closed" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/closed" />
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,100 @@
+diff --git a/boot.img.out/RAMDISK/fstab.qcom b/boot.img.out/RAMDISK/fstab.qcom
+index 224e592..6832476 100644
+--- a/boot.img.out/RAMDISK/fstab.qcom
++++ b/boot.img.out/RAMDISK/fstab.qcom
+@@ -2,19 +2,10 @@
+ # The filesystem that contains the filesystem checker binary (typically /system) cannot
+ # specify MF_CHECK, and must come before any filesystems that do specify MF_CHECK
+ 
+-/dev/block/platform/msm_sdcc.1/by-name/system       /system         ext4    ro,barrier=1                                                    wait
++/dev/block/platform/msm_sdcc.1/by-name/system         /system      ext4    ro,barrier=1,discard                                wait
+ /dev/block/platform/msm_sdcc.1/by-name/cache        /cache          ext4    noatime,nosuid,nodev,barrier=1,data=ordered,nomblk_io_submit,errors=panic wait,check
+-/dev/block/platform/msm_sdcc.1/by-name/userdata     /data           ext4    noatime,nosuid,nodev,barrier=1,data=ordered,nomblk_io_submit,errors=panic wait,check,encryptable=footer,length=-16384
++/dev/block/platform/msm_sdcc.1/by-name/userdata       /data        ext4    nosuid,nodev,barrier=1,noauto_da_alloc,discard      wait,check,encryptable=/dev/block/platform/msm_sdcc.1/by-name/bk1
+ /dev/block/platform/msm_sdcc.1/by-name/persist      /persist        ext4    nosuid,nodev,barrier=1,data=ordered,nodelalloc wait
+ /dev/block/platform/msm_sdcc.1/by-name/boot         /boot           emmc    defaults                                                        defaults
+ /dev/block/platform/msm_sdcc.1/by-name/recovery     /recovery       emmc    defaults                                                        defaults
+-/dev/block/platform/msm_sdcc.1/by-name/misc         /misc           emmc    defaults                                                        defaults
+-/dev/block/platform/msm_sdcc.1/by-name/modem        /radio          emmc    defaults                                                        defaults
+-/dev/block/platform/msm_sdcc.1/by-name/sbl1         /sbl1           emmc    defaults                                                        defaults
+-/dev/block/platform/msm_sdcc.1/by-name/sbl2         /sbl2           emmc    defaults                                                        defaults
+-/dev/block/platform/msm_sdcc.1/by-name/sbl3         /sbl3           emmc    defaults                                                        defaults
+-/dev/block/platform/msm_sdcc.1/by-name/tz           /tz             emmc    defaults                                                        defaults
+-/dev/block/platform/msm_sdcc.1/by-name/rpm          /rpm            emmc    defaults                                                        defaults
+-/dev/block/platform/msm_sdcc.1/by-name/aboot        /aboot          emmc    defaults                                                        defaults
+-/devices/platform/msm_sdcc.1/mmc_host/mmc0*          auto            ext4    noatime,nosuid,nodev,barrier=1,data=ordered,noauto_da_alloc,nodelalloc,uid=1023,gid=1023,dmask=0007,fmask=0007 voldmanaged=sdcard0:27,nonremovable,noemulatedsd
+-/devices/platform/msm_hsusb_host*                    auto            auto    defaults                                                        voldmanaged=usbdisk:auto
++/devices/platform/msm_hsusb_host*                    auto            auto    defaults                                                        voldmanaged=usbotg:auto
+diff --git a/boot.img.out/RAMDISK/init.target.rc b/boot.img.out/RAMDISK/init.target.rc
+index 74116c9..651fdc9 100755
+--- a/boot.img.out/RAMDISK/init.target.rc
++++ b/boot.img.out/RAMDISK/init.target.rc
+@@ -34,17 +34,20 @@ on init
+     # Set permissions for persist partition
+     mkdir /persist 0771 system system
+     # See storage config details at http://source.android.com/tech/storage/
+-    mkdir /storage 0775 system system
+-    mkdir /mnt/media_rw/sdcard0 0700 media_rw media_rw
+-    mkdir /mnt/media_rw/usbdisk 0700 media_rw media_rw
+-    mkdir /storage/sdcard0 0775 system system
+-    mkdir /storage/usbdisk 0775 system system
+-    export EXTERNAL_STORAGE /storage/sdcard0
+-
+-    symlink /storage/sdcard0 /sdcard
+-    symlink /storage/sdcard0 /mnt/sdcard
+-    symlink /storage/usbdisk /usbdisk
+-    symlink /storage/usbdisk /mnt/usbdisk
++    mkdir /mnt/shell/emulated 0700 shell shell
++    mkdir /storage/emulated 0555 root root
++    mkdir /mnt/media_rw/usbotg 0700 media_rw media_rw
++    mkdir /storage/usbotg 0700 root root
++
++    export EXTERNAL_STORAGE /storage/emulated/legacy
++    export EMULATED_STORAGE_SOURCE /mnt/shell/emulated
++    export EMULATED_STORAGE_TARGET /storage/emulated
++
++    # Support legacy paths
++    symlink /storage/emulated/legacy /sdcard
++    symlink /storage/emulated/legacy /mnt/sdcard
++    symlink /storage/emulated/legacy /storage/sdcard0
++    symlink /mnt/shell/emulated/0 /storage/emulated/legacy
+ 
+ on fs
+     mount_all ./fstab.qcom
+@@ -77,14 +80,19 @@ on post-fs-data
+     mkdir /data/media 0770 media_rw media_rw
+     chown media_rw media_rw /data/media
+ 
+-service fuse_sdcard0 /system/bin/sdcard -u 1023 -g 1023 -d /mnt/media_rw/sdcard0 /storage/sdcard0
++# virtual sdcard daemon running as media_rw (1023)
++service sdcard /system/bin/sdcard -u 1023 -g 1023 -l /data/media /mnt/shell/emulated
+     class late_start
+-    disabled
+ 
+-service fuse_usbdisk /system/bin/sdcard -u 1023 -g 1023 -d /mnt/media_rw/usbdisk /storage/usbdisk
++service fuse_usbotg /system/bin/sdcard -u 1023 -g 1023 -d /mnt/media_rw/usbotg /storage/usbotg
+     class late_start
+     disabled
+ 
++# Binding fuse mount point to /storage/emulated/legacy
++on property:init.svc.sdcard=running
++    wait /mnt/shell/emulated/0
++    mount none /mnt/shell/emulated/0 /storage/emulated/legacy bind
++
+ on property:persist.sys.display_prefer=0
+     write /sys/devices/virtual/graphics/fb0/msm_fb_dispparam 2
+
+diff --git a/framework-res/res/xml/storage_list.xml b/framework-res/res/xml/storage_list.xml
+index ba9b618..1ea99dc 100644
+--- a/framework-res/res/xml/storage_list.xml
++++ b/framework-res/res/xml/storage_list.xml
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="utf-8"?>
+ <StorageList
+   xmlns:android="http://schemas.android.com/apk/res/android">
+-    <storage android:mountPoint="/storage/sdcard0" android:storageDescription="@string/storage_internal" android:primary="true" android:removable="false" android:allowMassStorage="false" />
+-    <storage android:mountPoint="/storage/usbdisk" android:storageDescription="@string/storage_usb" android:primary="false" android:removable="true" />
++    <storage android:mountPoint="/storage/sdcard0" android:storageDescription="@string/storage_internal" android:primary="true" android:removable="false" android:emulated="true" android:mtpReserve="100" />
++    <storage android:mountPoint="/storage/usbotg" android:storageDescription="@string/storage_usb" android:primary="false" android:removable="true" />
+ </StorageList>
+\ No newline at end of file

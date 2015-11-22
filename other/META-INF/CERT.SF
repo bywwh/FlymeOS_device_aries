@@ -1,0 +1,38 @@
+Signature-Version: 1.0
+Created-By: 1.0 (Android SignApk)
+SHA1-Digest-Manifest: naz7YSiPe4fE77VFPU/yfrnl0Gc=
+
+Name: install/bin/otasigcheck.sh
+SHA1-Digest: UVyfZQ+26UuBrbxxfqdyTbduAEc=
+
+Name: boot.img
+SHA1-Digest: z/wV3+xymBVZ/n4I3mCwrPcmYuU=
+
+Name: install/bin/backuptool.functions
+SHA1-Digest: XmD23HnoakGTvBJX+55LwPaiqrA=
+
+Name: META-INF/com/google/android/updater-script
+SHA1-Digest: 754U6U1pWTZ9pFpGOMm7dwVcgCc=
+
+Name: META-INF/com/android/metadata
+SHA1-Digest: 5ivCaMF/0HjKTyvo1kS5gWnU4U0=
+
+Name: META-INF/com/android/otacert
+SHA1-Digest: QW7yPFUPbhU0tUYKW4i2EdneCnw=
+
+Name: system/framework/framework-res.apk
+SHA1-Digest: 0bDrAqArqGtliv2t3Xe+wA2bLwY=
+
+Name: install/bin/backuptool.sh
+SHA1-Digest: 5oEMhZi65u9XUAhbWVzqU/zv1Zg=
+
+Name: META-INF/org/cyanogenmod/releasekey
+SHA1-Digest: QlqPAv7OEyNO1XR7wQlEgIomSHU=
+
+Name: META-INF/com/google/android/update-binary
+SHA1-Digest: LTXDDCl3OXBZviwDCs5X4zy55s4=
+
+Name: install/bin/resize2fs_static
+SHA1-Digest: lQkOM1n2Fonu6qHvWuhQGAwhoAc=
+
+

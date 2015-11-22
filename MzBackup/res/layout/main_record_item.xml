@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.meizu.backup.ui.RecordItemView android:gravity="center_vertical" android:paddingLeft="@dimen/listPreferredItemPaddingLeft" android:layout_width="fill_parent" android:layout_height="@dimen/listPreferredItemMinHeight"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:id="@id/main_date" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/dateStyle" />
+    <TextView android:ellipsize="end" android:id="@id/main_content" android:paddingRight="61.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="26.0dip" android:singleLine="true" style="@style/contentStyle" />
+    <CheckBox android:id="@android:id/checkbox" android:focusable="false" android:clickable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="15.0dip" android:layout_marginRight="28.0dip" android:layout_alignParentRight="true" style="@style/CheckBoxStyle" />
+</com.meizu.backup.ui.RecordItemView>
