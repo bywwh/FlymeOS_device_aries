@@ -21,6 +21,7 @@ mv ./out/flyme*.zip ./out/flyme
 cd ./out/flyme
 unzip flyme*.zip
 rm -rf flyme*.zip
+patch -p1 < ../../other/updater-script.patch
 cp -rf ../../other/supersu ./
 mkdir -p data/system_app
 mv system/app system/priv-app data/system_app

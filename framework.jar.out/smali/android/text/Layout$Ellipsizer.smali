@@ -3,8 +3,8 @@
 .source "Layout.java"
 
 # interfaces
-.implements Ljava/lang/CharSequence;
 .implements Landroid/text/GetChars;
+.implements Ljava/lang/CharSequence;
 
 
 # annotations

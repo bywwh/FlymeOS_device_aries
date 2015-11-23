@@ -3,8 +3,8 @@
 .source "ModelInterpreter.java"
 
 # interfaces
-.implements Ljava/lang/Runnable;
 .implements Lcom/android/internal/telephony/test/SimulatedRadioControl;
+.implements Ljava/lang/Runnable;
 
 
 # static fields

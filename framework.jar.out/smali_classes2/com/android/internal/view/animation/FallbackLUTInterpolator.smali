@@ -3,8 +3,8 @@
 .source "FallbackLUTInterpolator.java"
 
 # interfaces
-.implements Lcom/android/internal/view/animation/NativeInterpolatorFactory;
 .implements Landroid/animation/TimeInterpolator;
+.implements Lcom/android/internal/view/animation/NativeInterpolatorFactory;
 
 
 # annotations

@@ -3,9 +3,9 @@
 .source "ContactsContract.java"
 
 # interfaces
-.implements Landroid/provider/ContactsContract$DataColumnsWithJoins;
 .implements Landroid/provider/ContactsContract$CommonDataKinds$CommonColumns;
 .implements Landroid/provider/ContactsContract$ContactCounts;
+.implements Landroid/provider/ContactsContract$DataColumnsWithJoins;
 
 
 # annotations
@@ -207,136 +207,113 @@
     .param p0, "type"    # I
 
     .prologue
-    .line 5865
     packed-switch p0, :pswitch_data_0
 
-    .line 5886
-    const v0, 0x1040343
+    const v0, #android:string@phoneTypeCustom#t
 
     :goto_0
     return v0
 
-    .line 5866
     :pswitch_0
-    const v0, 0x1040344
+    const v0, #android:string@phoneTypeHome#t
 
     goto :goto_0
 
-    .line 5867
     :pswitch_1
-    const v0, 0x1040345
+    const v0, #android:string@phoneTypeMobile#t
 
     goto :goto_0
 
-    .line 5868
     :pswitch_2
-    const v0, 0x1040346
+    const v0, #android:string@phoneTypeWork#t
 
     goto :goto_0
 
-    .line 5869
     :pswitch_3
-    const v0, 0x1040347
+    const v0, #android:string@phoneTypeFaxWork#t
 
     goto :goto_0
 
-    .line 5870
     :pswitch_4
-    const v0, 0x1040348
+    const v0, #android:string@phoneTypeFaxHome#t
 
     goto :goto_0
 
-    .line 5871
     :pswitch_5
-    const v0, 0x1040349
+    const v0, #android:string@phoneTypePager#t
 
     goto :goto_0
 
-    .line 5872
     :pswitch_6
-    const v0, 0x104034a
+    const v0, #android:string@phoneTypeOther#t
 
     goto :goto_0
 
-    .line 5873
     :pswitch_7
-    const v0, 0x104034b
+    const v0, #android:string@phoneTypeCallback#t
 
     goto :goto_0
 
-    .line 5874
     :pswitch_8
-    const v0, 0x104034c
+    const v0, #android:string@phoneTypeCar#t
 
     goto :goto_0
 
-    .line 5875
     :pswitch_9
-    const v0, 0x104034d
+    const v0, #android:string@phoneTypeCompanyMain#t
 
     goto :goto_0
 
-    .line 5876
     :pswitch_a
-    const v0, 0x104034e
+    const v0, #android:string@phoneTypeIsdn#t
 
     goto :goto_0
 
-    .line 5877
     :pswitch_b
-    const v0, 0x104034f
+    const v0, #android:string@phoneTypeMain#t
 
     goto :goto_0
 
-    .line 5878
     :pswitch_c
-    const v0, 0x1040350
+    const v0, #android:string@phoneTypeOtherFax#t
 
     goto :goto_0
 
-    .line 5879
     :pswitch_d
-    const v0, 0x1040351
+    const v0, #android:string@phoneTypeRadio#t
 
     goto :goto_0
 
-    .line 5880
     :pswitch_e
-    const v0, 0x1040352
+    const v0, #android:string@phoneTypeTelex#t
 
     goto :goto_0
 
-    .line 5881
     :pswitch_f
-    const v0, 0x1040353
+    const v0, #android:string@phoneTypeTtyTdd#t
 
     goto :goto_0
 
-    .line 5882
     :pswitch_10
-    const v0, 0x1040354
+    const v0, #android:string@phoneTypeWorkMobile#t
 
     goto :goto_0
 
-    .line 5883
     :pswitch_11
-    const v0, 0x1040355
+    const v0, #android:string@phoneTypeWorkPager#t
 
     goto :goto_0
 
-    .line 5884
     :pswitch_12
-    const v0, 0x1040356
+    const v0, #android:string@phoneTypeAssistant#t
 
     goto :goto_0
 
-    .line 5885
     :pswitch_13
-    const v0, 0x1040357
+    const v0, #android:string@phoneTypeMms#t
 
     goto :goto_0
 
-    .line 5865
     nop
 
     :pswitch_data_0

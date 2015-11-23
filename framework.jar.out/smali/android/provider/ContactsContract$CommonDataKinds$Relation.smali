@@ -3,9 +3,9 @@
 .source "ContactsContract.java"
 
 # interfaces
-.implements Landroid/provider/ContactsContract$DataColumnsWithJoins;
 .implements Landroid/provider/ContactsContract$CommonDataKinds$CommonColumns;
 .implements Landroid/provider/ContactsContract$ContactCounts;
+.implements Landroid/provider/ContactsContract$DataColumnsWithJoins;
 
 
 # annotations
@@ -106,100 +106,83 @@
     .param p0, "type"    # I
 
     .prologue
-    .line 6702
     packed-switch p0, :pswitch_data_0
 
-    .line 6719
-    const v0, 0x1040375
+    const v0, #android:string@orgTypeCustom#t
 
     :goto_0
     return v0
 
-    .line 6703
     :pswitch_0
-    const v0, 0x1040377
+    const v0, #android:string@relationTypeAssistant#t
 
     goto :goto_0
 
-    .line 6704
     :pswitch_1
-    const v0, 0x1040378
+    const v0, #android:string@relationTypeBrother#t
 
     goto :goto_0
 
-    .line 6705
     :pswitch_2
-    const v0, 0x1040379
+    const v0, #android:string@relationTypeChild#t
 
     goto :goto_0
 
-    .line 6707
     :pswitch_3
-    const v0, 0x104037a
+    const v0, #android:string@relationTypeDomesticPartner#t
 
     goto :goto_0
 
-    .line 6708
     :pswitch_4
-    const v0, 0x104037b
+    const v0, #android:string@relationTypeFather#t
 
     goto :goto_0
 
-    .line 6709
     :pswitch_5
-    const v0, 0x104037c
+    const v0, #android:string@relationTypeFriend#t
 
     goto :goto_0
 
-    .line 6710
     :pswitch_6
-    const v0, 0x104037d
+    const v0, #android:string@relationTypeManager#t
 
     goto :goto_0
 
-    .line 6711
     :pswitch_7
-    const v0, 0x104037e
+    const v0, #android:string@relationTypeMother#t
 
     goto :goto_0
 
-    .line 6712
     :pswitch_8
-    const v0, 0x104037f
+    const v0, #android:string@relationTypeParent#t
 
     goto :goto_0
 
-    .line 6713
     :pswitch_9
-    const v0, 0x1040380
+    const v0, #android:string@relationTypePartner#t
 
     goto :goto_0
 
-    .line 6715
     :pswitch_a
-    const v0, 0x1040381
+    const v0, #android:string@relationTypeReferredBy#t
 
     goto :goto_0
 
-    .line 6716
     :pswitch_b
-    const v0, 0x1040382
+    const v0, #android:string@relationTypeRelative#t
 
     goto :goto_0
 
-    .line 6717
     :pswitch_c
-    const v0, 0x1040383
+    const v0, #android:string@relationTypeSister#t
 
     goto :goto_0
 
-    .line 6718
     :pswitch_d
-    const v0, 0x1040384
+    const v0, #android:string@relationTypeSpouse#t
 
     goto :goto_0
 
-    .line 6702
     nop
 
     :pswitch_data_0

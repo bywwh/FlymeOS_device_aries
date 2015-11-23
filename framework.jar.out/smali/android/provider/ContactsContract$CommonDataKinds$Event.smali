@@ -3,9 +3,9 @@
 .source "ContactsContract.java"
 
 # interfaces
-.implements Landroid/provider/ContactsContract$DataColumnsWithJoins;
 .implements Landroid/provider/ContactsContract$CommonDataKinds$CommonColumns;
 .implements Landroid/provider/ContactsContract$ContactCounts;
+.implements Landroid/provider/ContactsContract$DataColumnsWithJoins;
 
 
 # annotations
@@ -88,7 +88,7 @@
     .param p0, "type"    # Ljava/lang/Integer;
 
     .prologue
-    const v0, 0x104035b
+    const v0, #android:string@eventTypeOther#t
 
     .line 6807
     if-nez p0, :cond_0
@@ -106,24 +106,20 @@
 
     packed-switch v1, :pswitch_data_0
 
-    .line 6815
-    const v0, 0x1040358
+    const v0, #android:string@eventTypeCustom#t
 
     goto :goto_0
 
-    .line 6812
     :pswitch_1
-    const v0, 0x104035a
+    const v0, #android:string@eventTypeAnniversary#t
 
     goto :goto_0
 
-    .line 6813
     :pswitch_2
-    const v0, 0x1040359
+    const v0, #android:string@eventTypeBirthday#t
 
     goto :goto_0
 
-    .line 6810
     nop
 
     :pswitch_data_0

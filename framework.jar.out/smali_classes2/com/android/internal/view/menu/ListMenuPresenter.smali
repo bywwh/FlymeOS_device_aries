@@ -3,8 +3,8 @@
 .source "ListMenuPresenter.java"
 
 # interfaces
-.implements Lcom/android/internal/view/menu/MenuPresenter;
 .implements Landroid/widget/AdapterView$OnItemClickListener;
+.implements Lcom/android/internal/view/menu/MenuPresenter;
 
 
 # annotations
@@ -193,7 +193,7 @@
     .line 98
     iget-object v0, p0, Lcom/android/internal/view/menu/ListMenuPresenter;->mInflater:Landroid/view/LayoutInflater;
 
-    const v1, 0x1090050
+    const v1, #android:layout@expanded_menu_layout#t
 
     const/4 v2, 0x0
 

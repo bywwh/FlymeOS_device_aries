@@ -3,9 +3,9 @@
 .source "ContactsContract.java"
 
 # interfaces
-.implements Landroid/provider/ContactsContract$DataColumnsWithJoins;
 .implements Landroid/provider/ContactsContract$CommonDataKinds$CommonColumns;
 .implements Landroid/provider/ContactsContract$ContactCounts;
+.implements Landroid/provider/ContactsContract$DataColumnsWithJoins;
 
 
 # annotations
@@ -108,70 +108,58 @@
     .param p0, "type"    # I
 
     .prologue
-    .line 6408
     packed-switch p0, :pswitch_data_0
 
-    .line 6418
-    const v0, 0x1040369
+    const v0, #android:string@imProtocolCustom#t
 
     :goto_0
     return v0
 
-    .line 6409
     :pswitch_0
-    const v0, 0x104036a
+    const v0, #android:string@imProtocolAim#t
 
     goto :goto_0
 
-    .line 6410
     :pswitch_1
-    const v0, 0x104036b
+    const v0, #android:string@imProtocolMsn#t
 
     goto :goto_0
 
-    .line 6411
     :pswitch_2
-    const v0, 0x104036c
+    const v0, #android:string@imProtocolYahoo#t
 
     goto :goto_0
 
-    .line 6412
     :pswitch_3
-    const v0, 0x104036d
+    const v0, #android:string@imProtocolSkype#t
 
     goto :goto_0
 
-    .line 6413
     :pswitch_4
-    const v0, 0x104036e
+    const v0, #android:string@imProtocolQq#t
 
     goto :goto_0
 
-    .line 6414
     :pswitch_5
-    const v0, 0x104036f
+    const v0, #android:string@imProtocolGoogleTalk#t
 
     goto :goto_0
 
-    .line 6415
     :pswitch_6
-    const v0, 0x1040370
+    const v0, #android:string@imProtocolIcq#t
 
     goto :goto_0
 
-    .line 6416
     :pswitch_7
-    const v0, 0x1040371
+    const v0, #android:string@imProtocolJabber#t
 
     goto :goto_0
 
-    .line 6417
     :pswitch_8
-    const v0, 0x1040372
+    const v0, #android:string@imProtocolNetMeeting#t
 
     goto :goto_0
 
-    .line 6408
     nop
 
     :pswitch_data_0
@@ -230,34 +218,28 @@
     .param p0, "type"    # I
 
     .prologue
-    .line 6380
     packed-switch p0, :pswitch_data_0
 
-    .line 6384
-    const v0, 0x1040365
+    const v0, #android:string@imTypeCustom#t
 
     :goto_0
     return v0
 
-    .line 6381
     :pswitch_0
-    const v0, 0x1040366
+    const v0, #android:string@imTypeHome#t
 
     goto :goto_0
 
-    .line 6382
     :pswitch_1
-    const v0, 0x1040367
+    const v0, #android:string@imTypeWork#t
 
     goto :goto_0
 
-    .line 6383
     :pswitch_2
-    const v0, 0x1040368
+    const v0, #android:string@imTypeOther#t
 
     goto :goto_0
 
-    .line 6380
     nop
 
     :pswitch_data_0

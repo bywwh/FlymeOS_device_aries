@@ -3,9 +3,9 @@
 .source "MenuDialogHelper.java"
 
 # interfaces
-.implements Landroid/content/DialogInterface$OnKeyListener;
 .implements Landroid/content/DialogInterface$OnClickListener;
 .implements Landroid/content/DialogInterface$OnDismissListener;
+.implements Landroid/content/DialogInterface$OnKeyListener;
 .implements Lcom/android/internal/view/menu/MenuPresenter$Callback;
 
 
@@ -347,7 +347,7 @@
 
     move-result-object v5
 
-    const v6, 0x1090068
+    const v6, #android:layout@list_menu_item_layout#t
 
     invoke-direct {v4, v5, v6}, Lcom/android/internal/view/menu/ListMenuPresenter;-><init>(Landroid/content/Context;I)V
 

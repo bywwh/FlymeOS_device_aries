@@ -3,9 +3,9 @@
 .source "ActivityChooserView.java"
 
 # interfaces
-.implements Landroid/widget/AdapterView$OnItemClickListener;
 .implements Landroid/view/View$OnClickListener;
 .implements Landroid/view/View$OnLongClickListener;
+.implements Landroid/widget/AdapterView$OnItemClickListener;
 .implements Landroid/widget/PopupWindow$OnDismissListener;
 
 
@@ -133,7 +133,7 @@
 
     move-result-object v3
 
-    const v4, 0x10405b1
+    const v4, #android:string@activitychooserview_choose_application_error#t
 
     const/4 v5, 0x1
 

@@ -3,10 +3,10 @@
 .source "ActionMenuItemView.java"
 
 # interfaces
-.implements Lcom/android/internal/view/menu/MenuView$ItemView;
 .implements Landroid/view/View$OnClickListener;
 .implements Landroid/view/View$OnLongClickListener;
 .implements Landroid/widget/ActionMenuView$ActionMenuChildView;
+.implements Lcom/android/internal/view/menu/MenuView$ItemView;
 
 
 # annotations
@@ -114,7 +114,7 @@
 
     .line 75
     .local v2, "res":Landroid/content/res/Resources;
-    const v3, 0x1120061
+    const v3, #android:bool@config_allowActionMenuItemTextWithIcon#t
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -508,7 +508,7 @@
 
     move-result-object v0
 
-    const v1, 0x1120061
+    const v1, #android:bool@config_allowActionMenuItemTextWithIcon#t
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
 

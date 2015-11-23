@@ -3,8 +3,8 @@
 .source "GlobalActions.java"
 
 # interfaces
-.implements Lcom/android/internal/policy/impl/GlobalActions$Action;
 .implements Landroid/view/View$OnClickListener;
+.implements Lcom/android/internal/policy/impl/GlobalActions$Action;
 
 
 # annotations
@@ -63,9 +63,9 @@
     .line 945
     :array_0
     .array-data 4
-        0x10202f7
-        0x10202f8
-        0x10202f9
+        #android:id@option1#t
+        #android:id@option2#t
+        #android:id@option3#t
     .end array-data
 .end method
 
@@ -99,14 +99,12 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 974
-    const v4, 0x1090055
+    const v4, #android:layout@global_actions_silent_mode#t
 
     invoke-virtual {p4, v4, p3, v5}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     move-result-object v3
 
-    .line 976
     .local v3, "v":Landroid/view/View;
     iget-object v4, p0, Lcom/android/internal/policy/impl/GlobalActions$SilentModeTriStateAction;->mAudioManager:Landroid/media/AudioManager;
 

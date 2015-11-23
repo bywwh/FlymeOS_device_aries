@@ -3,8 +3,8 @@
 .source "GlobalActions.java"
 
 # interfaces
-.implements Landroid/content/DialogInterface$OnDismissListener;
 .implements Landroid/content/DialogInterface$OnClickListener;
+.implements Landroid/content/DialogInterface$OnDismissListener;
 
 
 # annotations
@@ -314,7 +314,7 @@
 
     move-result-object v4
 
-    const v7, 0x112007a
+    const v7, #android:bool@config_useFixedVolume#t
 
     invoke-virtual {v4, v7}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -680,7 +680,7 @@
     :goto_2
     new-instance v0, Lcom/android/internal/policy/impl/GlobalActions$6;
 
-    const v2, 0x10803cd
+    const v2, #android:drawable@ic_menu_cc#t
 
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -911,15 +911,15 @@
     :goto_0
     new-instance v0, Lcom/android/internal/policy/impl/GlobalActions$1;
 
-    const v2, 0x108036f
+    const v2, #android:drawable@ic_lock_airplane_mode#t
 
-    const v3, 0x1080371
+    const v3, #android:drawable@ic_lock_airplane_mode_off#t
 
-    const v4, 0x104011a
+    const v4, #android:string@global_actions_toggle_airplane_mode#t
 
-    const v5, 0x104011b
+    const v5, #android:string@global_actions_airplane_mode_on_status#t
 
-    const v6, 0x104011c
+    const v6, #android:string@global_actions_airplane_mode_off_status#t
 
     move-object v1, p0
 
@@ -944,7 +944,7 @@
 
     move-result-object v0
 
-    const v1, 0x1070037
+    const v1, #android:array@config_globalActionsList#t
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 
@@ -1338,9 +1338,9 @@
     .line 403
     new-instance v0, Lcom/android/internal/policy/impl/GlobalActions$3;
 
-    const v1, 0x1080373
+    const v1, #android:drawable@ic_lock_bugreport#t
 
-    const v2, 0x1040114
+    const v2, #android:string@bugreport_title#t
 
     invoke-direct {v0, p0, v1, v2}, Lcom/android/internal/policy/impl/GlobalActions$3;-><init>(Lcom/android/internal/policy/impl/GlobalActions;II)V
 
@@ -1385,9 +1385,9 @@
     .line 481
     new-instance v0, Lcom/android/internal/policy/impl/GlobalActions$5;
 
-    const v1, 0x108002f
+    const v1, #android:drawable@ic_lock_lock#t
 
-    const v2, 0x104011e
+    const v2, #android:string@global_action_lockdown#t
 
     invoke-direct {v0, p0, v1, v2}, Lcom/android/internal/policy/impl/GlobalActions$5;-><init>(Lcom/android/internal/policy/impl/GlobalActions;II)V
 
@@ -1401,9 +1401,9 @@
     .line 458
     new-instance v0, Lcom/android/internal/policy/impl/GlobalActions$4;
 
-    const v1, 0x1080433
+    const v1, #android:drawable@ic_settings#t
 
-    const v2, 0x104011d
+    const v2, #android:string@global_action_settings#t
 
     invoke-direct {v0, p0, v1, v2}, Lcom/android/internal/policy/impl/GlobalActions$4;-><init>(Lcom/android/internal/policy/impl/GlobalActions;II)V
 

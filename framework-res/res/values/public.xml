@@ -1208,6 +1208,7 @@
     <public type="attr" name="dialogPreferredPadding" id="0x010104d3" />
     <public type="attr" name="searchHintIcon" id="0x010104d4" />
     <public type="attr" name="revisionCode" id="0x010104d5" />
+    <public type="attr" name="needAccessControl" id="0x010104d6" />
     <public type="attr" name="APKTOOL_DUMMY_0267" id="0x01010267" />
     <public type="attr" name="APKTOOL_DUMMY_03a8" id="0x010103a8" />
     <public type="attr" name="APKTOOL_DUMMY_03c3" id="0x010103c3" />
@@ -8804,47 +8805,46 @@
     <public type="^attr-private" name="pointerIconSpotTouch" id="0x01160084" />
     <public type="^attr-private" name="pointerIconSpotAnchor" id="0x01160085" />
     <public type="^attr-private" name="pointerIconStylusHover" id="0x01160086" />
-    <public type="^attr-private" name="bitmap" id="0x01160087" />
-    <public type="^attr-private" name="hotSpotX" id="0x01160088" />
-    <public type="^attr-private" name="hotSpotY" id="0x01160089" />
-    <public type="^attr-private" name="mountPoint" id="0x0116008a" />
-    <public type="^attr-private" name="storageDescription" id="0x0116008b" />
-    <public type="^attr-private" name="primary" id="0x0116008c" />
-    <public type="^attr-private" name="removable" id="0x0116008d" />
-    <public type="^attr-private" name="emulated" id="0x0116008e" />
-    <public type="^attr-private" name="mtpReserve" id="0x0116008f" />
-    <public type="^attr-private" name="allowMtp" id="0x01160090" />
-    <public type="^attr-private" name="allowMassStorage" id="0x01160091" />
-    <public type="^attr-private" name="maxFileSize" id="0x01160092" />
-    <public type="^attr-private" name="headerLayout" id="0x01160093" />
-    <public type="^attr-private" name="headerRemoveIconIfEmpty" id="0x01160094" />
-    <public type="^attr-private" name="externalRouteEnabledDrawable" id="0x01160095" />
-    <public type="^attr-private" name="pageSpacing" id="0x01160096" />
-    <public type="^attr-private" name="scrollIndicatorPaddingLeft" id="0x01160097" />
-    <public type="^attr-private" name="scrollIndicatorPaddingRight" id="0x01160098" />
-    <public type="^attr-private" name="dotSize" id="0x01160099" />
-    <public type="^attr-private" name="numDots" id="0x0116009a" />
-    <public type="^attr-private" name="glowDot" id="0x0116009b" />
-    <public type="^attr-private" name="leftToRight" id="0x0116009c" />
-    <public type="^attr-private" name="layout_childType" id="0x0116009d" />
-    <public type="^attr-private" name="itemLayout" id="0x0116009e" />
-    <public type="^attr-private" name="itemColor" id="0x0116009f" />
-    <public type="^attr-private" name="layout_centerWithinArea" id="0x011600a0" />
-    <public type="^attr-private" name="layout_maxWidth" id="0x011600a1" />
-    <public type="^attr-private" name="titleMargins" id="0x011600a2" />
-    <public type="^attr-private" name="titleMarginStart" id="0x011600a3" />
-    <public type="^attr-private" name="titleMarginEnd" id="0x011600a4" />
-    <public type="^attr-private" name="titleMarginTop" id="0x011600a5" />
-    <public type="^attr-private" name="titleMarginBottom" id="0x011600a6" />
-    <public type="^attr-private" name="maxButtonHeight" id="0x011600a7" />
-    <public type="^attr-private" name="navigationButtonStyle" id="0x011600a8" />
-    <public type="^attr-private" name="buttonGravity" id="0x011600a9" />
-    <public type="^attr-private" name="collapseIcon" id="0x011600aa" />
-    <public type="^attr-private" name="maxCollapsedHeight" id="0x011600ab" />
-    <public type="^attr-private" name="maxCollapsedHeightSmall" id="0x011600ac" />
-    <public type="^attr-private" name="layout_alwaysShow" id="0x011600ad" />
-    <public type="^attr-private" name="layout_ignoreOffset" id="0x011600ae" />
-    <public type="^attr-private" name="neverEncrypt" id="0x011600af" />
-    <public type="^attr-private" name="cantSaveState" id="0x011600b0" />
-    <public type="^attr-private" name="primaryUserOnly" id="0x011600b1" />
+    <public type="^attr-private" name="bitmap" id="0x01160100" />
+    <public type="^attr-private" name="hotSpotX" id="0x01160087" />
+    <public type="^attr-private" name="hotSpotY" id="0x01160088" />
+    <public type="^attr-private" name="mountPoint" id="0x01160089" />
+    <public type="^attr-private" name="storageDescription" id="0x0116008a" />
+    <public type="^attr-private" name="primary" id="0x0116008b" />
+    <public type="^attr-private" name="removable" id="0x0116008c" />
+    <public type="^attr-private" name="emulated" id="0x0116008d" />
+    <public type="^attr-private" name="mtpReserve" id="0x0116008e" />
+    <public type="^attr-private" name="allowMassStorage" id="0x0116008f" />
+    <public type="^attr-private" name="maxFileSize" id="0x01160090" />
+    <public type="^attr-private" name="headerLayout" id="0x01160091" />
+    <public type="^attr-private" name="headerRemoveIconIfEmpty" id="0x01160092" />
+    <public type="^attr-private" name="externalRouteEnabledDrawable" id="0x01160093" />
+    <public type="^attr-private" name="pageSpacing" id="0x01160094" />
+    <public type="^attr-private" name="scrollIndicatorPaddingLeft" id="0x01160095" />
+    <public type="^attr-private" name="scrollIndicatorPaddingRight" id="0x01160096" />
+    <public type="^attr-private" name="dotSize" id="0x01160097" />
+    <public type="^attr-private" name="numDots" id="0x01160098" />
+    <public type="^attr-private" name="glowDot" id="0x01160099" />
+    <public type="^attr-private" name="leftToRight" id="0x0116009a" />
+    <public type="^attr-private" name="layout_childType" id="0x0116009b" />
+    <public type="^attr-private" name="itemLayout" id="0x0116009c" />
+    <public type="^attr-private" name="itemColor" id="0x0116009d" />
+    <public type="^attr-private" name="layout_centerWithinArea" id="0x0116009e" />
+    <public type="^attr-private" name="layout_maxWidth" id="0x0116009f" />
+    <public type="^attr-private" name="titleMargins" id="0x011600a0" />
+    <public type="^attr-private" name="titleMarginStart" id="0x011600a1" />
+    <public type="^attr-private" name="titleMarginEnd" id="0x011600a2" />
+    <public type="^attr-private" name="titleMarginTop" id="0x011600a3" />
+    <public type="^attr-private" name="titleMarginBottom" id="0x011600a4" />
+    <public type="^attr-private" name="maxButtonHeight" id="0x011600a5" />
+    <public type="^attr-private" name="navigationButtonStyle" id="0x011600a6" />
+    <public type="^attr-private" name="buttonGravity" id="0x011600a7" />
+    <public type="^attr-private" name="collapseIcon" id="0x011600a8" />
+    <public type="^attr-private" name="maxCollapsedHeight" id="0x011600a9" />
+    <public type="^attr-private" name="maxCollapsedHeightSmall" id="0x011600aa" />
+    <public type="^attr-private" name="layout_alwaysShow" id="0x011600ab" />
+    <public type="^attr-private" name="layout_ignoreOffset" id="0x011600ac" />
+    <public type="^attr-private" name="neverEncrypt" id="0x011600ad" />
+    <public type="^attr-private" name="cantSaveState" id="0x011600ae" />
+    <public type="^attr-private" name="primaryUserOnly" id="0x011600af" />
 </resources>
