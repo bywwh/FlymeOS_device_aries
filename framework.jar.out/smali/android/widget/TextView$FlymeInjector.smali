@@ -317,30 +317,24 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 9944
-    const v1, 0x1020028
+    const v1, #android:id@startSelectingText#t
 
     if-ne v1, p1, :cond_0
 
-    .line 9945
     invoke-static {p0}, Landroid/widget/TextView$FlymeInjector;->editorSelectCurrentWordMz(Landroid/widget/TextView;)V
 
-    .line 9952
     :goto_0
     return v0
 
-    .line 9947
     :cond_0
     sget v1, Landroid/widget/TextView;->ID_COPY_ALL:I
 
     if-ne v1, p1, :cond_1
 
-    .line 9948
     invoke-static {p0}, Landroid/widget/TextView$FlymeInjector;->copyAllOnTextContextMenuItem(Landroid/widget/TextView;)V
 
     goto :goto_0
 
-    .line 9952
     :cond_1
     const/4 v0, 0x0
 

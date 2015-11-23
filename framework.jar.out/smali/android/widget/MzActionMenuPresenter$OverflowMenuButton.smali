@@ -33,46 +33,36 @@
 
     const/4 v1, 0x1
 
-    .line 721
     iput-object p1, p0, Landroid/widget/MzActionMenuPresenter$OverflowMenuButton;->this$0:Landroid/widget/MzActionMenuPresenter;
 
-    .line 722
-    const v0, 0x10102f6
+    const v0, #android:attr@actionOverflowButtonStyle#t
 
     invoke-direct {p0, p2, v2, v0}, Lcom/meizu/widget/GlowImageButton;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 720
     const/4 v0, 0x2
 
     new-array v0, v0, [F
 
     iput-object v0, p0, Landroid/widget/MzActionMenuPresenter$OverflowMenuButton;->mTempPts:[F
 
-    .line 724
     invoke-virtual {p0, v1}, Landroid/widget/MzActionMenuPresenter$OverflowMenuButton;->setClickable(Z)V
 
-    .line 725
     invoke-virtual {p0, v1}, Landroid/widget/MzActionMenuPresenter$OverflowMenuButton;->setFocusable(Z)V
 
-    .line 726
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Landroid/widget/MzActionMenuPresenter$OverflowMenuButton;->setVisibility(I)V
 
-    .line 727
     invoke-virtual {p0, v1}, Landroid/widget/MzActionMenuPresenter$OverflowMenuButton;->setEnabled(Z)V
 
-    .line 729
     new-instance v0, Landroid/widget/MzActionMenuPresenter$OverflowMenuButton$1;
 
     invoke-direct {v0, p0, p0, p1}, Landroid/widget/MzActionMenuPresenter$OverflowMenuButton$1;-><init>(Landroid/widget/MzActionMenuPresenter$OverflowMenuButton;Landroid/view/View;Landroid/widget/MzActionMenuPresenter;)V
 
     invoke-virtual {p0, v0}, Landroid/widget/MzActionMenuPresenter$OverflowMenuButton;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
-    .line 760
     invoke-virtual {p0, v2}, Landroid/widget/MzActionMenuPresenter$OverflowMenuButton;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
-    .line 761
     # getter for: Landroid/widget/MzActionMenuPresenter;->mOverFlowButtonDrawable:Landroid/graphics/drawable/Drawable;
     invoke-static {p1}, Landroid/widget/MzActionMenuPresenter;->access$400(Landroid/widget/MzActionMenuPresenter;)Landroid/graphics/drawable/Drawable;
 
@@ -123,7 +113,7 @@
 
     sget-object v4, Landroid/R$styleable;->ImageView:[I
 
-    const v5, 0x10102f6
+    const v5, #android:attr@actionOverflowButtonStyle#t
 
     invoke-virtual {p1, v3, v4, v5, v6}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 

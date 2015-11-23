@@ -208,7 +208,7 @@
 
     move-result v3
 
-    const v4, 0x1020380
+    const v4, #android:id@split_action_bar#t
 
     if-ne v3, v4, :cond_0
 
@@ -1358,11 +1358,9 @@
     .locals 1
 
     .prologue
-    .line 164
     invoke-super {p0}, Landroid/widget/FrameLayout;->onFinishInflate()V
 
-    .line 165
-    const v0, 0x102037e
+    const v0, #android:id@action_bar#t
 
     invoke-virtual {p0, v0}, Lcom/android/internal/widget/MzActionBarContainer;->findViewById(I)Landroid/view/View;
 
@@ -1370,8 +1368,7 @@
 
     iput-object v0, p0, Lcom/android/internal/widget/MzActionBarContainer;->mActionBarView:Landroid/view/View;
 
-    .line 166
-    const v0, 0x102037f
+    const v0, #android:id@action_context_bar#t
 
     invoke-virtual {p0, v0}, Lcom/android/internal/widget/MzActionBarContainer;->findViewById(I)Landroid/view/View;
 

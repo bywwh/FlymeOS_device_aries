@@ -445,19 +445,16 @@
 
     const/4 v5, 0x0
 
-    .line 2631
     iget v7, p0, Landroid/view/inputmethod/EditorInfo;->fieldId:I
 
-    const v8, 0x1020003
+    const v8, #android:id@edit#t
 
     if-ne v7, v8, :cond_1
 
-    .line 2645
     :cond_0
     :goto_0
     return v5
 
-    .line 2634
     :cond_1
     const/4 v7, 0x4
 

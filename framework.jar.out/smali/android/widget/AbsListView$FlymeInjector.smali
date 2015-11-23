@@ -650,18 +650,15 @@
 
     move-result-object v1
 
-    .line 8652
     .local v1, "child":Landroid/view/View;
     if-eqz v1, :cond_0
 
-    .line 8653
-    const v2, 0x1020001
+    const v2, #android:id@checkbox#t
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
-    .line 8654
     .local v0, "checkbox":Landroid/view/View;
     instance-of v2, v0, Landroid/widget/Checkable;
 
@@ -1404,45 +1401,36 @@
 
     if-eqz v5, :cond_1
 
-    .line 8731
     :cond_3
     iget-object v5, p0, Landroid/widget/AbsListView;->mSelector:Landroid/graphics/drawable/Drawable;
 
     if-eqz v5, :cond_4
 
-    .line 8732
     iget-object v5, p0, Landroid/widget/AbsListView;->mSelector:Landroid/graphics/drawable/Drawable;
 
     sget-object v8, Landroid/util/StateSet;->NOTHING:[I
 
     invoke-virtual {v5, v8}, Landroid/graphics/drawable/Drawable;->setState([I)Z
 
-    .line 8733
     iget-object v5, p0, Landroid/widget/AbsListView;->mSelector:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v5}, Landroid/graphics/drawable/Drawable;->jumpToCurrentState()V
 
-    .line 8736
     :cond_4
     iput p2, p0, Landroid/widget/AbsListView;->mDragAndDropPosition:I
 
-    .line 8737
     iput-wide p3, p0, Landroid/widget/AbsListView;->mDragAndDropId:J
 
-    .line 8738
     iput-object p1, p0, Landroid/widget/AbsListView;->mCurrentDragChild:Landroid/view/View;
 
-    .line 8739
     iput-object p1, p0, Landroid/widget/AbsListView;->mDragShawdowView:Landroid/view/View;
 
-    .line 8741
-    const v5, 0x1020001
+    const v5, #android:id@checkbox#t
 
     invoke-virtual {p1, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v1
 
-    .line 8742
     .local v1, "checkbox":Landroid/view/View;
     if-eqz v1, :cond_6
 
@@ -2614,7 +2602,7 @@
 
     .line 8515
     :cond_0
-    const v2, 0x1020001
+    const v2, #android:id@checkbox#t
 
     invoke-virtual {p1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

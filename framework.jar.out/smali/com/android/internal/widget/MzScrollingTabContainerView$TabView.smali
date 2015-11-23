@@ -39,37 +39,29 @@
     .param p4, "forList"    # Z
 
     .prologue
-    .line 503
     iput-object p1, p0, Lcom/android/internal/widget/MzScrollingTabContainerView$TabView;->this$0:Lcom/android/internal/widget/MzScrollingTabContainerView;
 
-    .line 504
     const/4 v0, 0x0
 
-    const v1, 0x10102f3
+    const v1, #android:attr@actionBarTabStyle#t
 
     invoke-direct {p0, p2, v0, v1}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 505
     iput-object p3, p0, Lcom/android/internal/widget/MzScrollingTabContainerView$TabView;->mTab:Landroid/app/ActionBar$Tab;
 
-    .line 509
     const/16 v0, 0x11
 
     invoke-virtual {p0, v0}, Lcom/android/internal/widget/MzScrollingTabContainerView$TabView;->setGravity(I)V
 
-    .line 511
     if-eqz p4, :cond_0
 
-    .line 512
     const v0, 0x800013
 
     invoke-virtual {p0, v0}, Lcom/android/internal/widget/MzScrollingTabContainerView$TabView;->setGravity(I)V
 
-    .line 515
     :cond_0
     invoke-virtual {p0}, Lcom/android/internal/widget/MzScrollingTabContainerView$TabView;->update()V
 
-    .line 516
     return-void
 .end method
 
@@ -657,7 +649,7 @@
 
     move-result-object v10
 
-    const v11, 0x10102f5
+    const v11, #android:attr@actionBarTabTextStyle#t
 
     invoke-direct {v8, v10, v12, v11}, Landroid/widget/TextView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 

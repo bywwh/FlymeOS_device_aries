@@ -1081,24 +1081,20 @@
 
     invoke-direct {v0, v3}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 527
     .local v0, "builder":Landroid/app/AlertDialog$Builder;
     sget v3, Lcom/flyme/internal/R$string;->url_warning_title:I
 
     invoke-virtual {v0, v3}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
-    .line 528
     sget v3, Lcom/flyme/internal/R$string;->url_warning_messgae:I
 
     invoke-virtual {v0, v3}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
 
-    .line 529
-    const/high16 v3, 0x1040000
+    const/high16 v3, #android:string@cancel#i
 
     invoke-virtual {v0, v3, v5}, Landroid/app/AlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    .line 530
-    const v3, 0x104000a
+    const v3, #android:string@ok#t
 
     new-instance v4, Landroid/text/util/UrlSpanHelper$6;
 

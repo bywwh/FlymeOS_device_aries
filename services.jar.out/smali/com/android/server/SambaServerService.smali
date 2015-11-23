@@ -776,27 +776,23 @@
 
     invoke-direct {v2, v14, v15}, Landroid/widget/RemoteViews;-><init>(Ljava/lang/String;I)V
 
-    .line 321
     .local v2, "contentView":Landroid/widget/RemoteViews;
-    const v14, 0x1020006
+    const v14, #android:id@icon#t
 
     invoke-virtual {v2, v14, v6}, Landroid/widget/RemoteViews;->setImageViewResource(II)V
 
-    .line 322
     sget v14, Lcom/flyme/internal/R$id;->mz_subTitle:I
 
     const/16 v15, 0x8
 
     invoke-virtual {v2, v14, v15}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
 
-    .line 324
     move-object/from16 v0, p0
 
     iget-object v14, v0, Lcom/android/server/SambaServerService;->mNotification:Landroid/app/Notification;
 
     iput-object v2, v14, Landroid/app/Notification;->contentView:Landroid/widget/RemoteViews;
 
-    .line 333
     .end local v2    # "contentView":Landroid/widget/RemoteViews;
     .end local v8    # "intent":Landroid/content/Intent;
     :cond_5
@@ -906,7 +902,7 @@
 
     iget-object v14, v14, Landroid/app/Notification;->contentView:Landroid/widget/RemoteViews;
 
-    const v15, 0x1020016
+    const v15, #android:id@title#t
 
     invoke-virtual {v14, v15, v13}, Landroid/widget/RemoteViews;->setTextViewText(ILjava/lang/CharSequence;)V
 
