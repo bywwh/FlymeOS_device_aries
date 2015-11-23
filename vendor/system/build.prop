@@ -50,13 +50,7 @@ rild.libargs=-d /dev/smd0
 # ADDITIONAL_BUILD_PROPERTIES
 #
 telephony.lteOnCdmaDevice=0
-persist.sys.timezone=Asia/Shanghai
-gsm.network.type=EvDo-rev.A
-ro.telephony.default_network=4
-ril.subscription.types=NV,RUIM
-ro.cdma.factory=china
-ro.cdma.home.operator.alpha=ChinaTelecom
-ro.ril.oem.nosim.ecclist=911,112,120,122,110,119
+ril.subscription.types=RUIM
 persist.radio.apm_sim_not_pwdn=0
 ro.telephony.call_ring.multiple=0
 drm.service.enabled=true
