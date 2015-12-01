@@ -718,6 +718,9 @@
 
     .line 220
     .end local v0    # "service":Lcom/android/internal/widget/ILockSettings;
+
+    invoke-direct/range {p0 .. p0}, Lcom/android/internal/widget/LockPatternUtils;->setFlymeLockSettingsService()V
+
     :cond_0
     iget-object v1, p0, Lcom/android/internal/widget/LockPatternUtils;->mLockSettingsService:Lcom/android/internal/widget/ILockSettings;
 
@@ -3377,7 +3380,7 @@
 
     move-result-object v0
 
-    const v1, 0x1120057
+    const v1, #android:bool@config_voice_capable#t
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -3397,7 +3400,7 @@
 
     move-result-object v0
 
-    const v1, 0x1120048
+    const v1, #android:bool@config_enable_emergency_call_while_sim_locked#t
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -3828,7 +3831,7 @@
 
     move-result-object v0
 
-    const v1, 0x1120047
+    const v1, #android:bool@config_enable_puk_unlock_screen#t
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -6283,41 +6286,33 @@
 
     if-eqz p2, :cond_0
 
-    .line 1634
     invoke-virtual {p1, v3}, Landroid/widget/Button;->setVisibility(I)V
 
-    .line 1641
     invoke-virtual {p0}, Lcom/android/internal/widget/LockPatternUtils;->isInCall()Z
 
     move-result v4
 
     if-eqz v4, :cond_2
 
-    .line 1643
-    const v2, 0x1040468
+    const v2, #android:string@lockscreen_return_to_call#t
 
-    .line 1644
     .local v2, "textId":I
     if-eqz p3, :cond_1
 
-    const v1, 0x1080084
+    const v1, #android:drawable@stat_sys_phone_call#t
 
-    .line 1645
     .local v1, "phoneCallIcon":I
     :goto_0
     invoke-virtual {p1, v1, v3, v3, v3}, Landroid/widget/Button;->setCompoundDrawablesWithIntrinsicBounds(IIII)V
 
-    .line 1651
     .end local v1    # "phoneCallIcon":I
     :goto_1
     invoke-virtual {p1, v2}, Landroid/widget/Button;->setText(I)V
 
-    .line 1652
     .end local v2    # "textId":I
     :goto_2
     return-void
 
-    .line 1636
     :cond_0
     const/16 v3, 0x8
 
@@ -6329,21 +6324,17 @@
     :cond_1
     move v1, v3
 
-    .line 1644
     goto :goto_0
 
-    .line 1647
     .end local v2    # "textId":I
     :cond_2
-    const v2, 0x1040467
+    const v2, #android:string@lockscreen_emergency_call#t
 
-    .line 1648
     .restart local v2    # "textId":I
     if-eqz p3, :cond_3
 
-    const v0, 0x1080359
+    const v0, #android:drawable@ic_emergency#t
 
-    .line 1649
     .local v0, "emergencyIcon":I
     :goto_3
     invoke-virtual {p1, v0, v3, v3, v3}, Landroid/widget/Button;->setCompoundDrawablesWithIntrinsicBounds(IIII)V
@@ -6422,5 +6413,24 @@
     invoke-static {v0, v1, p1, v2}, Landroid/provider/Settings$Secure;->putIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)Z
 
     .line 1475
+    return-void
+.end method
+
+.method private setFlymeLockSettingsService()V
+    .locals 1
+
+    .prologue
+    const-string v0, "lock_settings"
+
+    invoke-static {v0}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/android/internal/widget/ILockSettings$Stub;->asInterface(Landroid/os/IBinder;)Lcom/android/internal/widget/ILockSettings;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/android/internal/widget/LockPatternUtils;->mLockSettingsService:Lcom/android/internal/widget/ILockSettings;
+
     return-void
 .end method

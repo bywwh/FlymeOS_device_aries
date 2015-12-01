@@ -185,15 +185,15 @@
     .param p1, "settingName"    # Ljava/lang/String;
 
     .prologue
-    const v7, 0x1040126
+    const v7, #android:string@def_custom_sys_mms#t
 
-    const v6, 0x1040125
+    const v6, #android:string@def_custom_sys_notification#t
 
-    const v5, 0x1040124
+    const v5, #android:string@def_custom_sys_ringtone3#t
 
-    const v4, 0x1040123
+    const v4, #android:string@def_custom_sys_ringtone2#t
 
-    const v3, 0x1040122
+    const v3, #android:string@def_custom_sys_ringtone#t
 
     .line 403
     new-instance v1, Ljava/lang/StringBuilder;
@@ -437,7 +437,7 @@
 
     move-result-object v1
 
-    const v2, 0x1040127
+    const v2, #android:string@def_custom_sys_alarm#t
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -456,7 +456,7 @@
 
     move-result-object v1
 
-    const v2, 0x1040127
+    const v2, #android:string@def_custom_sys_alarm#t
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -527,13 +527,11 @@
 
     move-result-object v7
 
-    .line 172
     .local v7, "actualUri":Landroid/net/Uri;
     :goto_0
     if-nez v7, :cond_2
 
-    .line 173
-    const v1, 0x1040594
+    const v1, #android:string@ringtone_default#t
 
     invoke-virtual {p0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -570,7 +568,7 @@
 
     .line 178
     .local v6, "actualTitle":Ljava/lang/String;
-    const v1, 0x1040595
+    const v1, #android:string@ringtone_default_with_actual#t
 
     new-array v2, v11, [Ljava/lang/Object;
 
@@ -588,30 +586,25 @@
     :goto_2
     if-nez v10, :cond_4
 
-    .line 207
-    const v1, 0x1040598
+    const v1, #android:string@ringtone_unknown#t
 
     invoke-virtual {p0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v10
 
-    .line 209
     if-nez v10, :cond_4
 
-    .line 210
     const-string v10, ""
 
     :cond_4
     move-object v1, v10
 
-    .line 214
     goto :goto_1
 
-    .line 184
     .restart local v8    # "authority":Ljava/lang/String;
     :cond_5
     :try_start_0
-    const-string/jumbo v1, "media"
+    const-string v1, "media"
 
     invoke-virtual {v1, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -740,7 +733,7 @@
 
     move-result-object v0
 
-    const v1, 0x11200bb
+    const v1, #android:bool@def_custom_sys_sound#t
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -797,7 +790,7 @@
 
     move-result-object v0
 
-    const v1, 0x1100005
+    const v1, #android:raw@fallbackring#t
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->openRawResourceFd(I)Landroid/content/res/AssetFileDescriptor;
 
@@ -1822,6 +1815,123 @@
     move-result-object v2
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_0
+.end method
+
+.method public isLocalPlayerValid()Z
+    .locals 1
+
+    .prologue
+    iget-object v0, p0, Landroid/media/Ringtone;->mLocalPlayer:Landroid/media/MediaPlayer;
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public playLocal()Z
+    .locals 2
+
+    .prologue
+    iget-object v0, p0, Landroid/media/Ringtone;->mLocalPlayer:Landroid/media/MediaPlayer;
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Landroid/media/Ringtone;->mAudioManager:Landroid/media/AudioManager;
+
+    iget-object v1, p0, Landroid/media/Ringtone;->mAudioAttributes:Landroid/media/AudioAttributes;
+
+    invoke-static {v1}, Landroid/media/AudioAttributes;->toLegacyStreamType(Landroid/media/AudioAttributes;)I
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Landroid/media/AudioManager;->getStreamVolume(I)I
+
+    move-result v0
+
+    if-ltz v0, :cond_0
+
+    iget-object v0, p0, Landroid/media/Ringtone;->mLocalPlayer:Landroid/media/MediaPlayer;
+
+    invoke-virtual {v0}, Landroid/media/MediaPlayer;->start()V
+
+    :cond_0
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_1
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public setOnCompletionListener(Landroid/media/MediaPlayer$OnCompletionListener;)V
+    .locals 1
+    .param p1, "listener"    # Landroid/media/MediaPlayer$OnCompletionListener;
+
+    .prologue
+    iget-object v0, p0, Landroid/media/Ringtone;->mLocalPlayer:Landroid/media/MediaPlayer;
+
+    if-nez v0, :cond_0
+
+    :goto_0
+    return-void
+
+    :cond_0
+    iget-object v0, p0, Landroid/media/Ringtone;->mLocalPlayer:Landroid/media/MediaPlayer;
+
+    invoke-virtual {v0, p1}, Landroid/media/MediaPlayer;->setOnCompletionListener(Landroid/media/MediaPlayer$OnCompletionListener;)V
+
+    goto :goto_0
+.end method
+
+.method public setOnErrorListener(Landroid/media/MediaPlayer$OnErrorListener;)V
+    .locals 1
+    .param p1, "listener"    # Landroid/media/MediaPlayer$OnErrorListener;
+
+    .prologue
+    iget-object v0, p0, Landroid/media/Ringtone;->mLocalPlayer:Landroid/media/MediaPlayer;
+
+    if-nez v0, :cond_0
+
+    :goto_0
+    return-void
+
+    :cond_0
+    iget-object v0, p0, Landroid/media/Ringtone;->mLocalPlayer:Landroid/media/MediaPlayer;
+
+    invoke-virtual {v0, p1}, Landroid/media/MediaPlayer;->setOnErrorListener(Landroid/media/MediaPlayer$OnErrorListener;)V
+
+    goto :goto_0
+.end method
+
+.method public setRingVolume(F)V
+    .locals 1
+    .param p1, "volume"    # F
+
+    .prologue
+    iget-object v0, p0, Landroid/media/Ringtone;->mLocalPlayer:Landroid/media/MediaPlayer;
+
+    if-nez v0, :cond_0
+
+    :goto_0
+    return-void
+
+    :cond_0
+    iget-object v0, p0, Landroid/media/Ringtone;->mLocalPlayer:Landroid/media/MediaPlayer;
+
+    invoke-virtual {v0, p1, p1}, Landroid/media/MediaPlayer;->setVolume(FF)V
 
     goto :goto_0
 .end method
