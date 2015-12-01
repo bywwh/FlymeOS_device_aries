@@ -30,6 +30,37 @@ on early-init
     symlink /data/tombstones /tombstones
     mount debugfs debugfs /sys/kernel/debug
 
+on init
+    # Set permissions for persist partition
+    mkdir /persist 0771 system system
+    # See storage config details at http://source.android.com/tech/storage/
+    mkdir /storage 0775 system system
+    mkdir /mnt/media_rw/sdcard0 0700 media_rw media_rw
+    mkdir /mnt/media_rw/usbdisk 0700 media_rw media_rw
+    mkdir /storage/sdcard0 0775 system system
+    mkdir /storage/usbdisk 0775 system system
+    export EXTERNAL_STORAGE /storage/sdcard0
+
+    symlink /storage/sdcard0 /sdcard
+    symlink /storage/sdcard0 /mnt/sdcard
+    symlink /storage/usbdisk /usbdisk
+    symlink /storage/usbdisk /mnt/usbdisk
+
+on fs
+    mount_all ./fstab.qcom
+    mount vfat ${LOCAL_ENV_CURR_MODEM} /firmware wait ro shortname=lower,uid=1000,gid=1000,dmask=227,fmask=337
+    restorecon_recursive /persist
+    mkdir /persist/property
+    chmod 0775 /persist/property
+
+    chown system system /dev/ramdump_dsps
+    chown system system /dev/ramdump_lpass
+    chown system system /dev/ramdump_riva
+    chown system system /dev/ramdump_smem-dsps
+    chown system system /dev/ramdump_modem_fw
+    chown system system /dev/ramdump_modem_sw
+    chown system system /dev/ramdump_smem-modem
+
 on boot
    write /sys/devices/i2c-3/3-0024/cyttsp_update_fw 1
    write /sys/devices/i2c-3/3-005b/update_fw 1
@@ -43,7 +74,16 @@ on post-fs-data
    mkdir /tombstones/dsps 0771 system system
    mkdir /tombstones/mdm 0771 system system
    mkdir /tombstones/mdm2 0771 system system
+    mkdir /data/media 0770 media_rw media_rw
+    chown media_rw media_rw /data/media
 
+service fuse_sdcard0 /system/bin/sdcard -u 1023 -g 1023 -d /mnt/media_rw/sdcard0 /storage/sdcard0
+    class late_start
+    disabled
+
+service fuse_usbdisk /system/bin/sdcard -u 1023 -g 1023 -d /mnt/media_rw/usbdisk /storage/usbdisk
+    class late_start
+    disabled
 
 on property:persist.sys.display_prefer=0
     write /sys/devices/virtual/graphics/fb0/msm_fb_dispparam 2
