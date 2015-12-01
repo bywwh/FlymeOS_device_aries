@@ -138,7 +138,7 @@ board_modify_apps := FlymeLauncher TeleService Keyguard SystemUI Telecom MmsServ
 # You should configure the property according to your ID, ie, replace "Unofficial" with your ID.
 override_property += \
     ro.flyme.romer=bywwh
-    ro.product.model_romer=MI-2_Unofficial
+    ro.product.model_romer=MI2_bywwh
 
 ##############################################################################
 # The value decides which property you will remove from the build.prop.
