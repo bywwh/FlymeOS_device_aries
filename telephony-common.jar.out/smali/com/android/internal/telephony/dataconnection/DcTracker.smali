@@ -252,7 +252,7 @@
 
     move-result-object v4
 
-    const v5, #android:bool@config_fetch_apn_from_omh_card#t
+    const v5, 0x11200b3
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -1648,7 +1648,7 @@
 
     move-result-object v7
 
-    const v8, #android:bool@config_dontPreferApn#t
+    const v8, 0x112007b
 
     invoke-virtual {v7, v8}, Landroid/content/res/Resources;->getBoolean(I)Z
     :try_end_0
@@ -4577,7 +4577,7 @@
 
     move-result-object v3
 
-    const v4, #android:array@config_onlySingleDcAllowed#t
+    const v4, 0x1070038
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getIntArray(I)[I
 
@@ -5769,7 +5769,7 @@
 
     move-result-object v0
 
-    const v1, #android:bool@config_auto_attach_data_on_creation#t
+    const v1, 0x1120093
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -6971,19 +6971,23 @@
 
     invoke-virtual {v2, v4, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
+    .line 1676
     const-string v4, "reconnect_alarm_extra_type"
 
     invoke-virtual {v2, v4, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
+    .line 1679
     invoke-static {}, Landroid/telephony/SubscriptionManager;->getDefaultDataSubId()I
 
     move-result v3
 
+    .line 1680
     .local v3, "subId":I
     const-string v4, "subscription"
 
     invoke-virtual {v2, v4, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
+    .line 1683
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -7524,7 +7528,7 @@
 
     move-result-object v8
 
-    const v9, #android:bool@config_enable_mms_with_mobile_data_off#t
+    const v9, 0x11200a6
 
     invoke-virtual {v8, v9}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -10580,7 +10584,7 @@
 
     move-result-object v7
 
-    const v8, #android:array@networkAttributes#t
+    const v8, 0x1070016
 
     invoke-virtual {v7, v8}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 
@@ -11251,7 +11255,7 @@
 
     move-result-object v15
 
-    const v16, #android:bool@config_user_notification_of_restrictied_mobile_access#t
+    const v16, 0x1120058
 
     invoke-virtual/range {v15 .. v16}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -11991,7 +11995,7 @@
 
     move-result-object v9
 
-    const v10, #android:bool@config_enable_mms_with_mobile_data_off#t
+    const v10, 0x11200a6
 
     invoke-virtual {v9, v10}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -14300,7 +14304,7 @@
 
     move-result-object v2
 
-    const v3, #android:bool@config_restartRadioAfterProvisioning#t
+    const v3, 0x112007c
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -16315,8 +16319,6 @@
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v2
-
-    const-string v2, "mobile_data"
 
     invoke-static {v1, v2, v0}, Landroid/provider/Settings$Global;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 

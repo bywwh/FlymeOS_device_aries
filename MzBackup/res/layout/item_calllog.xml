@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:meizu="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:id="@id/select_calllog_item_ll" android:paddingLeft="@dimen/listPreferredItemPaddingLeft" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentLeft="true" android:layout_centerVertical="true">
+        <TextView android:textSize="18.0sp" android:textColor="#af000000" android:id="@id/calllog_id" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/calllog" />
+        <TextView android:textSize="14.0sp" android:textColor="#7f000000" android:id="@id/calllog_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/count" />
+    </LinearLayout>
+    <CheckBox android:id="@id/item_calllog_check" android:focusable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="28.0dip" android:checked="false" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    <ImageView android:id="@id/item_calllog_status" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="28.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    <com.meizu.common.widget.LoadingView android:id="@id/item_calllog_progress" android:visibility="gone" android:layout_width="24.0dip" android:layout_height="24.0dip" android:layout_marginRight="28.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" meizu:mcLoadingRadius="9.0dip" meizu:mcRingWidth="2.0dip" />
+    <ImageView android:background="@drawable/ic_list_divider" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="14.0dip" android:layout_marginRight="14.0dip" android:layout_alignParentBottom="true" />
+</RelativeLayout>

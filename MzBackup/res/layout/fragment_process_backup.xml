@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:id="@id/scroll_process" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginBottom="45.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:id="@id/fragment_container" android:paddingTop="15.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ViewStub android:id="@id/item_sd_select" android:layout="@layout/item_sd_select" android:layout_width="fill_parent" android:layout_height="@dimen/item_height" />
+        <ViewStub android:id="@id/item_contact" android:layout="@layout/item_contact" android:layout_width="fill_parent" android:layout_height="@dimen/item_height" />
+        <ViewStub android:id="@id/item_sms" android:layout="@layout/item_sms" android:layout_width="fill_parent" android:layout_height="@dimen/item_height" />
+        <ViewStub android:id="@id/item_mms" android:layout="@layout/item_mms" android:layout_width="fill_parent" android:layout_height="@dimen/item_height" />
+        <ViewStub android:id="@id/item_calllog" android:layout="@layout/item_calllog" android:layout_width="fill_parent" android:layout_height="@dimen/item_height" />
+        <ViewStub android:id="@id/item_calendar" android:layout="@layout/item_calendar" android:layout_width="fill_parent" android:layout_height="@dimen/item_height" />
+        <ViewStub android:id="@id/item_system_setting" android:layout="@layout/item_system_setting" android:layout_width="fill_parent" android:layout_height="@dimen/item_height" />
+        <ViewStub android:id="@id/item_app_data" android:layout="@layout/item_app_data" android:layout_width="fill_parent" android:layout_height="@dimen/item_height" />
+        <ViewStub android:id="@id/item_photo" android:layout="@layout/item_photo" android:layout_width="fill_parent" android:layout_height="@dimen/item_height" />
+    </LinearLayout>
+</ScrollView>
