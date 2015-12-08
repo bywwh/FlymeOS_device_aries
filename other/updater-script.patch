@@ -1,5 +1,5 @@
 diff --git a/META-INF/com/google/android/updater-script b/META-INF/com/google/android/updater-script
-index 1e4a317..647ac91 100644
+index 27830f2..a85520e 100644
 --- a/META-INF/com/google/android/updater-script
 +++ b/META-INF/com/google/android/updater-script
 @@ -5,8 +5,12 @@ assert(getprop("ro.product.device") == "aries" ||
@@ -15,7 +15,7 @@ index 1e4a317..647ac91 100644
  symlink("/firmware/image/dsps.b00", "/system/etc/firmware/dsps.b00");
  symlink("/firmware/image/dsps.b01", "/system/etc/firmware/dsps.b01");
  symlink("/firmware/image/dsps.b02", "/system/etc/firmware/dsps.b02");
-@@ -270,6 +274,11 @@ set_metadata("/system/xbin/sugote", "uid", 0, "gid", 0, "mode", 0755, "capabilit
+@@ -319,6 +323,11 @@ set_metadata("/system/xbin/sugote", "uid", 0, "gid", 0, "mode", 0755, "capabilit
  set_metadata("/system/xbin/sugote-mksh", "uid", 0, "gid", 0, "mode", 0755, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");
  set_metadata("/system/xbin/supolicy", "uid", 0, "gid", 0, "mode", 0755, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");
  show_progress(0.050000, 5);
