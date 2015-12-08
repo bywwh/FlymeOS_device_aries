@@ -100,6 +100,7 @@ ro.carrier=unknown
 persist.audio.vns.mode=2
 ro.cdma.home.operator.numeric=46003
 ro.telephony.default_cdma_sub=0
+ro.telephony.default_network=7
 persist.omh.enabled=true
 dalvik.vm.heapstartsize=8m
 dalvik.vm.heapgrowthlimit=192m
