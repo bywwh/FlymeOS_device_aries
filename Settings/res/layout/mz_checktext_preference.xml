@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:paddingLeft="@dimen/preference_item_padding_side" android:paddingRight="@dimen/preference_item_padding_side" android:layout_width="fill_parent" android:layout_height="fill_parent" android:minHeight="?android:listPreferredItemHeight"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <CheckedTextView android:textAppearance="?android:textAppearanceMedium" android:ellipsize="marquee" android:gravity="center|left" android:id="@id/title" android:focusable="false" android:layout_width="fill_parent" android:layout_height="wrap_content" android:checkMark="@flyme:drawable/mz_btn_check_single" />
-</LinearLayout>
