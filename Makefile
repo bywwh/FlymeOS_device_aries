@@ -137,7 +137,7 @@ board_modify_apps := FlymeLauncher TeleService Keyguard SystemUI Telecom MmsServ
 # The default value is Unofficial.
 # You should configure the property according to your ID, ie, replace "Unofficial" with your ID.
 override_property += \
-    ro.flyme.romer=bywwh
+    ro.flyme.romer=bywwh \
     ro.product.model_romer=MI2_bywwh
 
 ##############################################################################
