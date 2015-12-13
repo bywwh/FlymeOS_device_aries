@@ -8,7 +8,7 @@
 
     $ mkdir FlymeOS
     $ cd FlymeOS
-    $ repo init -u https://github.com/FlymeOS/manifest.git
+    $ repo init -u https://github.com/FlymeOS/manifest.git -b lollipop-5.0
     $ repo sync -c -j4
 
 2.切换base-lollipop-5.1
