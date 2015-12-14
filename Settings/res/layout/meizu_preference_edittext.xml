@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:id="@id/layout" android:paddingLeft="@dimen/mz_divider_margin_side" android:paddingRight="@dimen/mz_divider_margin_side" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:paddingLeft="@dimen/mz_divider_margin_side" android:paddingRight="@dimen/mz_divider_margin_side" android:text="@string/service_suggest" style="@style/Application_app_detail_title" />
-    <ImageView android:background="@flyme:drawable/mz_card_list_divider_light" android:layout_width="fill_parent" android:layout_height="wrap_content" android:contentDescription="@null" />
-    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/edittext_container" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="43.0dip" />
-</LinearLayout>

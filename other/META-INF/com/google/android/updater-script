@@ -1,6 +1,0 @@
-mount("ext4", "EMMC", "/dev/block/platform/msm_sdcc.1/by-name/system", "/system", "");
-package_extract_dir("system", "/system");
-unmount("/system");
-show_progress(0.050000, 5);
-package_extract_file("boot.img", "/dev/block/platform/msm_sdcc.1/by-name/boot");
-show_progress(0.200000, 10);
