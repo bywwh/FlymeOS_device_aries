@@ -21,7 +21,7 @@ echo
 cp -rf $DEVICE_DIR/boot.img.out $DEVICE_DIR/boot.img.out.bak
 cp -rf $DEVICE_DIR/framework-res $DEVICE_DIR/framework-res.bak
 cp -rf $OTHER_DIR/storage_list.xml $DEVICE_DIR/framework-res/res/xml
-cp -rf $OTHER_DIR/fstab.qcom $OTHER_DIR/init.target.rc $DEVICE_DIR/boot.img.out/RAMDISK
+cp -rf $OTHER_DIR/fstab.qcom $OTHER_DIR/init.qcom.rc $DEVICE_DIR/boot.img.out/RAMDISK
 echo
 echo ">>> make fullota again"
 echo
