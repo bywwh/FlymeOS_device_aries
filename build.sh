@@ -38,7 +38,7 @@ if [ -e $FLYME_OUT_DIR/flyme*.zip ];then
 mv -vf $FLYME_OUT_DIR/flyme*.zip $FLYME_OUT_DIR/FlymeOS_aries-$USER-$(date +%Y%m%d)-mixed-5.1.1.zip
 fi
 
-if [ -e $DEVICE_DIR/tmp/*.zip ];then
+if [ -e $DEVICE_DIR/tmp/Flyme*.zip ] || [ -e $DEVICE_DIR/tmp/target*.zip ];then
 mv -vf $DEVICE_DIR/tmp/*.zip $FLYME_OUT_DIR
 rm -v -rf $DEVICE_DIR/tmp
 fi
